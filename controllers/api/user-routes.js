@@ -28,11 +28,19 @@ router.get("/:id", (req, res) => {
           "id",
           "title",
           "description",
-          "fund_needed",
           "collaborators_required",
+          "fund_needed",
           "created_at",
         ],
       },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Project,
+          attributes: ['title']
+        }
+    },
       {
         model: Donation,
         attributes: ["id", "amount", "created_at"],
@@ -91,8 +99,8 @@ router.post("/login", (req, res) => {
       return;
     }
 
-      // Session variables
-      req.session.save(() => {
+    // Session variables
+    req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.name = dbUserData.name;
       req.session.logged_in = true;
