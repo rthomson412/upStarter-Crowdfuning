@@ -24,9 +24,9 @@ router.get("/", (req, res) => {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
         include: {
-          model: Project,
-          attributes: ['title']
-        }
+          model: User,
+          attributes: ['name'],
+        },
     },
     {
         model: Donation,

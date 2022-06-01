@@ -1,6 +1,11 @@
 const { Comment } = require('../models');
 
-const commentData = [];
+const commentData = [
+    {
+      id: 1,
+      comment_text: "Test comment."
+    },
+  ];
 
 const seedComments = () => Comment.bulkCreate(commentData);
 
