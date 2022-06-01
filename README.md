@@ -1,1 +1,1 @@
-# upStarter
+# upStarter: A forum for starter tech projects seeking collaborators, insights and funding.
