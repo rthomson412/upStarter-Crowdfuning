@@ -1,7 +1,7 @@
 const User = require("./User");
 const Project = require("./Project");
 const Comment = require("./Comment");
-const Donations = require("./Donation");
+const Donation = require("./Donation");
 
 //Relationships between models
 

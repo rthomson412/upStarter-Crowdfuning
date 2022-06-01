@@ -15,11 +15,20 @@ router.get("/", (req, res) => {
       "fund_needed",
       "donation_total",
       "created_at",
+      "comments"
     ],
     // List in time created descending order
     order: [["created_at", "DESC"]],
     include: [
       {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Project,
+          attributes: ['title']
+        }
+    },
+    {
         model: Donation,
         attributes: ["id", "amount", "created_at"],
         include: {
