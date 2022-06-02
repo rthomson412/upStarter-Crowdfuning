@@ -59,7 +59,7 @@ router.get("/:id", (req, res) => {
       res.json(dbUserData);
     })
     .catch((err) => {
-      console.log(err);
+      console.error(err);
       res.status(500).json(err);
     });
 });
@@ -76,7 +76,8 @@ router.post("/", async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err);
+    res.status(500).json(err);
   }
 });
 

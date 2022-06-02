@@ -11,16 +11,20 @@ User.hasMany(Project, {
 });
 // Project to User
 Project.belongsTo(User, {
-  foreignKey: "user_id",
 });
 // Post to Comment
 Project.hasMany(Comment, {
-  foreignKey: "post_id",
+  foreignKey: "project_id",
   onDelete: "CASCADE",
 });
 // Comment to User
 Comment.belongsTo(User, {
   foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+// Comment to Project
+Comment.belongsTo(Project, {
+  foreignKey: "project_id",
   onDelete: "CASCADE",
 });
 // Donation to User
@@ -34,12 +38,12 @@ Donation.belongsTo(Project, {
 // User to Donation
 User.hasMany(Donation, {
   foreignKey: "user_id",
-  onDelete: "cascade",
+  onDelete: "CASCADE",
 });
 // Project to Donation
 Project.hasMany(Donation, {
   foreignKey: "project_id",
-  onDelete: "cascade",
+  onDelete: "CASCADE",
 });
 
 module.exports = { User, Project, Comment, Donation };

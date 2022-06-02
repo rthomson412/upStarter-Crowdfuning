@@ -4,19 +4,19 @@ const { Project, User, Donation } = require("../models");
 
 router.get("/", async (req, res) => {
   // Pass session and data into template
-  res.render("landingpage", {
+  res.render("homepage", {
     logged_in: req.session.logged_in,
   });
 });
 
 // Login page route
-router.get("/signin", (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
 
-  res.render("signin");
+  res.render("login");
 });
 
 // Signup page route
