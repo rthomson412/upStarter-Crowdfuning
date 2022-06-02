@@ -1,16 +1,12 @@
-
 async function donationFormHandler(event) {
     event.preventDefault();
-
 
     const amount = document.querySelector('#donation-amount').value.trim();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
-
     if (amount > 0) {
-
         const response = await fetch(`/api/donations`, {
             method: 'POST',
             body: JSON.stringify({
@@ -27,14 +23,12 @@ async function donationFormHandler(event) {
             document.location.replace('/dashboard');
             getAmountArr();
             donation_total();
-
         } else {
-            alert('Could not make donation');
+            alert('Unable to finalize at this time.');
         }
     }
 }
 
-// Array for fonation amounts
 function getAmountArr() {
     const amountArr = [];
     db.query(`SELECT * FROM donation WHERE project_id=${id}`, (err, res) => {
@@ -42,12 +36,10 @@ function getAmountArr() {
         for (var i = 0; i < res.length; i++) {
             amountArr.push(res[i].amount);
         }
-
     })
     return amountArr;
 }
 
-// Calculator function
 function donation_total() {
     let donation_total;
     let amountArr;
@@ -56,4 +48,4 @@ function donation_total() {
         return donation_total;
     };
 }
-document.querySelector('.donate-form').addEventListener('submit', donationFormHandler);
+document.querySelector('.donate-form-group').addEventListener('submit', donationFormHandler);
