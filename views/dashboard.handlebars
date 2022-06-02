@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>upSTARTER</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title"><a href="/dashboard">Your Projects</a></h1>
+  </header>
+
+  <main class="col-auto">
+    {{#if projects.length}}
+    {{#each projects as |project|}}
+        {{> project-info project}}
+            <a href="/dashboard/edit/{{project.id}}"><button class="edit-button">Edit project</button></a>
+        </div>
+    {{/each}}
+
+{{else}}
+<h4>You currently do not have any projects</h4>
+
+{{/if}}
+  </main>
+
+  <footer class="footer flex-row justify-center">
+    <a href="/dashboard/new">New project</a>
+  </footer>
+</body>
+
+<script src="javascript/logout.js"></script>
+</html>

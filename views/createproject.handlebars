@@ -1,0 +1,32 @@
+<section>
+  <a href="/dashboard" style="float:right">Back to Dashboard</a>
+  <h2>Create new project</h2>
+
+  <form class="new-project-form">
+    <div class="form-group">
+      <label for="project-title">Title:</label>
+      <input name="project-title" class="project-title" type="text" id="project-title"
+        placeholder="Insert project title" />
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea name="description" class="description" type="text" id="description"
+        placeholder="Insert project description" /></textarea>
+    </div>
+    <div class="form-group">
+      <label for="collaborators">Collaborators required:</label>
+      <textarea name="collaborators" class="collaborators" type="text" id="collaborators"
+        placeholder="Resources you are seeking" /></textarea>
+    </div>
+    <div class="form-group">
+      <label for="funding">Funding needed:</label>
+      <input name="funding" class="funding" type="number" id="funding"
+        placeholder="How much are you trying in raise?" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success" id="save-project-btn" type="submit">Save</button>
+    </div>
+  </form>
+</section>
+
+<script src="/javascript/createproject.js"></script>

@@ -1,0 +1,30 @@
+<section class="project">
+  <div class="title">
+    <span>
+      <a href="/projects/{{id}}">{{title}}</a>
+    </span>
+    <span style="float:right">Posted by {{user.name}} on
+      {{format_date
+      created_at}}</span>
+    <br>
+    <span style="float:right">{{comments.length}} {{format_plural "comment" comments.length}}</span>
+  </div>
+  <div class="text">
+    <p>{{description}}</p>
+  </div>
+  <div class="text">
+    <p>{{collaborators_required}}</p>
+  </div>
+  <p>
+  <h3>Financial target for project:</h3>
+  <span>Raised ${{donation_total}} / ${{fund_needed}}</span>
+  </p>
+  <p>
+    <label for="donation">Make a financial contribution:</label>
+  <div class="box">
+    <input class="input form-input" type="number" id="donation-amount" name="donation-amount" placeholder="($)" />
+    <button class="button is-primary donate-button">Contribute</button>
+  </div>
+  </div>
+  </div>
+</section>

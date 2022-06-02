@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>upSTARTER</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<div class="wrapper">
+  <header>
+    <h1 class="header">upSTARTER</h1>
+    <nav class="navbar">
+      {{#if loggedIn}}
+      <a href="/" class="navbar-item">Home</a>
+      <a href="/dashboard" class="navbar-item">Dashboard</a>
+      <a href="/dashboard/new" class="navbar-item">Create Project</a>
+      <button id="logout" class="navbar-item btn-no-style">Logout</button>
+      {{else}}
+      <a href="/" class="navbar-item">Home</a>
+      <a href="/login" class="navbar-item button">Login</a>
+      {{/if}}
+    </nav>
+  </header>
+
+  <main>
+    {{{ body }}}
+  </main>
+
+  <footer class="footer rows">
+    <div class="row">
+      <a href="/">Home</a>{{#if loggedIn}} | <a href="/dashboard">Dashboard</a> | <a href="/dashboard/new">Create
+        Post</a> {{else}} | <a href="/login">Login</a>{{/if}}
+    </div>
+  </footer>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>

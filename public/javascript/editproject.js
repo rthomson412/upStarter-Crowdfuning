@@ -1,10 +1,10 @@
 async function editProjectHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector("#pro_title").value.trim();
-    const description = document.querySelector("#pro_desc").value.trim();
-    const collaborators_required = document.querySelector("#col_req").value.trim();
-    const fund_needed = document.querySelector("#fund_needed").value.trim();
+    const title = document.querySelector('input[name="post-title"]').value.trim();
+    const description = document.querySelector('input[name="description"]').value.trim();
+    const collaborators_required = document.querySelector('input[name="collaborators"]').value.trim();
+    const fund_needed = document.querySelector('input[name="funding"]').value.trim();
 
     const id = window.location.toString().split("/")[
         window.location.toString().split("/").length - 1
