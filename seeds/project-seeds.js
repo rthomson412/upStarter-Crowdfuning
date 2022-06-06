@@ -8,7 +8,7 @@ const projectData =
     "title": "upSTARTER",
     "description": "Send this basic application to the moon!",
     "fund_needed": 1000000,
-    "donation_total": 10,
+    "donation_total": 500000,
     "created_at": "06/06/2022"
 },
 {

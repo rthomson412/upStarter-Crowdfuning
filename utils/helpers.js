@@ -1,15 +1,18 @@
 module.exports = {
-  format_date: (date) => {
-    return `${new Date(date).getMonth() + 1}/${new Date(
+  format_date: date => {
+    return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
       date
-    ).getDate()}/${new Date(date).getFullYear()}`;
+    ).getFullYear()}`;
   },
-  format_plural: (word, amount) => {
-    if (amount !== 1) {
-      return `${word}s`;
+
+  progress_bar: (donation_total, goal) => {
+    var percentage;
+    if (parseInt(donation_total) === 0) {
+      percentage = 0;
+    } else {
+      percentage = (donation_total / goal) * 100;
     }
 
-    return word;
-  },
-};
-
+    return percentage.toFixed(2);
+  }
+}

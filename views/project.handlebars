@@ -14,7 +14,8 @@
   <h3>Financial target for project:</h3>
   <span>Raised ${{donation_total}} / ${{fund_needed}}</span>
   </p>
-  <p>
+  <div class="ldBar label-center progress-bar" data-value={{progress_bar donation_total fund_needed}} data-preset="circle">
+    </div>
     <label for="donation">Make a financial contribution:</label>
   <div class="box">
     <input class="input form-input" type="number" id="donation-amount" name="donation-amount" placeholder="What goes around comes around. Give generously." />
