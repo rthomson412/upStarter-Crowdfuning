@@ -1,33 +1,23 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
-    Edit Post
+    Edit Project
   </h2>
   <form class="edit-project-form">
     <div>
       <input name="project-title" type="text" value="{{project.title}}" />
     </div>
     <div>
-      <textarea name="project-description">{{project.description}}</textarea>
-    </div>
-    <div>
-      <textarea name="collaborators-required">{{project.collaborators_required}}</textarea>
-    </div>
-     <div>
-      <textarea name="fund-needed">{{project.fund_needed}}</textarea>
+      <textarea name="project-desc">{{project.description}}</textarea>
     </div>
     <div>
       Posted on {{format_date project.created_at}}
-      |
-      <a href="/dashboard/edit/{{project.id}}">{{project.comments.length}} {{format_plural "comment" project.comments.length}}</a>
     </div>
-    <button type="submit" class="save-project-btn">Save</button>
+    <button type="submit">Save</button>
     <button type="button" class="delete-project-btn">Delete</button>
   </form>
 </article>
 
 
-<!--Scripts-->
-<script src="/jjavascript/editproject.js"></script>
+<script src="/javascript/editproject.js"></script>
 <script src="/javascript/deleteproject.js"></script>
-<script src="/javascript/comment.js"></script>

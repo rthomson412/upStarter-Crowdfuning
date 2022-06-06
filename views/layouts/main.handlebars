@@ -5,41 +5,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>upSTARTER</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Raleway:wght@200&family=Syne+Mono&family=Texturina:opsz,wght@12..72,100&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-<div class="wrapper">
-  <header>
-    <h1 class="header">upSTARTER</h1>
-    <nav class="navbar">
-      {{#if loggedIn}}
-      <a href="/" class="navbar-item">Home</a>
-      <a href="/dashboard" class="navbar-item">Dashboard</a>
-      <a href="/dashboard/new" class="navbar-item">Create Project</a>
-      <button id="logout" class="navbar-item btn-no-style">Logout</button>
-      {{else}}
-      <a href="/" class="navbar-item">Home</a>
-      <a href="/login" class="navbar-item button">Login</a>
-      {{/if}}
-    </nav>
-  </header>
 
-  <main>
+<body>
+  <header>
+    <div class="navbar" arial-label="main navigation">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <a class="button is-primary" href="/">
+            <strong>upSTARTER</strong>
+          </a>
+          <a class="button is-light all-projects" href="/projects">Projects</a>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <nav class="navbar-item">
+          {{#if logged_in}}
+          <div class="buttons">
+            <a class="button is-primary" href="/dashboard">
+              <strong>Dashboard</strong>
+            </a>
+            <a class="button is-light" id="logout">Logout</a>
+          </div>
+          {{else}}
+          <a class="button is-primary" href="/login"><strong>Login</strong></a>
+          {{/if}}
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
+  <footer>
 
-  <footer class="footer rows">
-    <div class="row">
-      <a href="/">Home</a>{{#if loggedIn}} | <a href="/dashboard">Dashboard</a> | <a href="/dashboard/new">Create
-        Post</a> {{else}} | <a href="/login">Login</a>{{/if}}
-    </div>
   </footer>
-</div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+  {{#if logged_in}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>

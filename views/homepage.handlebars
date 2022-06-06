@@ -1,14 +1,32 @@
-<div>
-    {{#each projects as |project|}}
-    <div class="project project-list">
-        <h2><a href="/projects/{{id}}">{{title}}</a></h2>
-        Posted by <b>{{user.name}}</b>
-        | {{format_date created_at}} | <a href="/projects/{{id}}">{{comments.length}} {{format_plural "comment"
-            comments.length}}</a>
-        <h4>{{description}}</h4>
-        <br>
+<div class="columns">
+ <div class="columns landingpage">
+    <div class= "column">
+      <h1>upSTARTER</h1>
+      <h2>Allow people to help you get your idea off the ground!</h2>
     </div>
-    {{else}}
-    <h6>No current projects</h6>
-    {{/each}}
+    <div class= "column description">
+      <p>Take your idea to the next level with upSTARTER funding. </p>
+    </div>
+  </div>
 </div>
+<br>
+  <h2>Funding for tech ideas, made easy!</h2>
+  <div class="columns">
+    <div class="column">
+      <div class="steps">1</div>
+      <h3>Join the community</h3>
+      <p>Signup and create your presence.</p>
+    </div>
+    <div class="column">
+      <div class="steps">2</div>
+      <h3>Outline your idea!</h3>
+      <p>Why should this project be funded?</p>
+    </div>
+    <div class="column">
+      <div class="steps">3</div>
+      <h3>Share</h3>
+      <p>People with resources are looking for projects.</p>
+    </div>
+  </div>
+
+

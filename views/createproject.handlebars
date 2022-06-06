@@ -2,29 +2,31 @@
   <a href="/dashboard" style="float:right">Back to Dashboard</a>
   <h2>Create new project</h2>
 
-  <form class="new-project-form">
-    <div class="form-group">
+  <form class="box new-project-form">
+    <div class="field form-group">
       <label for="project-title">Title:</label>
       <input name="project-title" class="project-title" type="text" id="project-title"
         placeholder="Insert project title" />
     </div>
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea name="description" class="description" type="text" id="description"
-        placeholder="Insert project description" /></textarea>
+    
+    <div class="field form-group">
+      <label class="label" for="project-desc">Description:</label>
+      <div class="control">
+        <textarea name="project-desc" class="input form-input" type="text" id="project-desc"
+          placeholder="Insert project description" /></textarea>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="collaborators">Collaborators required:</label>
-      <textarea name="collaborators" class="collaborators" type="text" id="collaborators"
-        placeholder="Resources you are seeking" /></textarea>
+
+    <div class="field form-group">
+      <label class="label" for="fund_needed">Funding needed:</label>
+      <div class="control">
+        <input name="funding" class="input form-input" type="number" id="fund_needed"
+          placeholder="How much are you trying in raise?" />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="funding">Funding needed:</label>
-      <input name="funding" class="funding" type="number" id="funding"
-        placeholder="How much are you trying in raise?" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-success" id="save-project-btn" type="submit">Save</button>
+
+    <div class="field form-group">
+      <button type="submit" class="button is-primary create-button">Create</button>
     </div>
   </form>
 </section>

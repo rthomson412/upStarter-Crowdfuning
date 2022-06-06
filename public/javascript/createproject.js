@@ -1,28 +1,32 @@
+
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value.trim();
-  const description = document.querySelector('input[name="description"]').value.trim();
-  const collaborators_required = document.querySelector('input[name="collaborators"]').value.trim();
-  const fund_needed = document.querySelector('input[name="funding"]').value.trim();
+  const title = document.querySelector('#project-title').value.trim();
+  const description = document.querySelector('#project-desc').value.trim();
+  const fund_needed = document.querySelector('#fund_needed').value.trim();
   
 
-  if (title && collaborators_required && fund_needed && description) {
+  if (title && fund_needed && description) {
     const response = await fetch(`/api/projects`, {
-      method: "POST",
-      body: JSON.stringify({title, description, collaborators_required, fund_needed}),
-      headers: {"Content-Type": "application/json"},
+      method: 'POST',
+      body: JSON.stringify({
+        title,
+        fund_needed,
+        description
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
 
     if (response.ok) {
       console.log(response);
-      document.location.replace("/dashboard");
+      document.location.replace('/dashboard');
     } else {
-      alert("Something went wrong!");
+      alert('Failed to create project');
     }
   }
 }
 
-document
-  .querySelector(".new-project-form")
-  .addEventListener("submit", newFormHandler);
+document.querySelector('.new-project-form').addEventListener('submit', newFormHandler);

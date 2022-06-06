@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection');
 
 class User extends Model {
   checkPassword(loginPassword) {
@@ -22,15 +22,15 @@ User.init(
       allowNull: false,
       validate: {
         notEmpty: true,
-      },
+      }
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
-      },
+        isEmail: true
+      }
     },
     password: {
       type: DataTypes.STRING,
@@ -53,13 +53,10 @@ User.init(
       },
     },
     sequelize,
-    // No need for automatic timestamps fields
     timestamps: false,
-    // No need to pluralize name of database table
     freezeTableName: true,
-    // Use underscore instead of camelCase
     underscored: true,
-    modelName: "user",
+    modelName: 'user',
   }
 );
 
