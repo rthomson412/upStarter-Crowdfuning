@@ -74,7 +74,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(dbProjectData => {
       if (!dbProjectData) {
-        res.status(404).json({ message: 'No porject found with this id' });
+        res.status(404).json({ message: 'No project found with this id' });
         return;
       }
       const project = dbProjectData.get({ plain: true });
@@ -107,5 +107,43 @@ router.get('/edituser', withAuth, (req, res) => {
     })
   });
   
+  router.get('/new', withAuth, (req, res) => {
+    Post.findAll({
+      where: {
+   
+        user_id: req.session.user_id
+      },
+      attributes: [
+        'id',
+        'title',
+        'description',
+        'user_id',
+        'fund_needed',
+        'created_at'
+      ],
+      include: [
+        {
+          model: Donation,
+          attributes: ['id', 'amount', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['name']
+          }
+        },
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
+    })
+      .then(dbPostData => {
+        const posts = dbProjecttData.map(post => post.get({ plain: true }));
+        res.render('createproject', { posts, loggedIn: true });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);s
+      });
+  });
 
 module.exports = router;
