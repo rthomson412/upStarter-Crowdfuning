@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Donation } = require("../../models");
+const { Donation, Project } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // All donations route
@@ -13,14 +13,22 @@ router.get("/", (req, res) => {
 });
 
 // Create a donation route
-router.post("/", withAuth, (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   if (req.session) {
     Donation.create({
       amount: req.body.amount,
       project_id: req.body.project_id,
       user_id: req.session.user_id,
     })
-      .then((dbDonationData) => res.json(dbDonationData))
+      .then(async (dbDonationData) => {
+        const project = await Project.findOne({ 
+          where: 
+            { id: req.body.project_id }
+          })
+        await project.increment("donation_total", { by: req.body.amount })
+        await project.save()
+        res.json(dbDonationData)
+      })
       .catch((err) => {
         console.log(err);
         res.status(400).json(err);

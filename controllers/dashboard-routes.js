@@ -108,7 +108,8 @@ router.get('/edituser', withAuth, (req, res) => {
   });
   
   router.get('/new', withAuth, (req, res) => {
-    Post.findAll({
+    console.log("NEW")
+    Project.findAll({
       where: {
    
         user_id: req.session.user_id
@@ -136,13 +137,13 @@ router.get('/edituser', withAuth, (req, res) => {
         }
       ]
     })
-      .then(dbPostData => {
-        const posts = dbProjecttData.map(post => post.get({ plain: true }));
+      .then(dbProjectData => {
+        const posts = dbProjectData.map(post => post.get({ plain: true }));
         res.render('createproject', { posts, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
-        res.status(500).json(err);s
+        res.status(500).json(err);
       });
   });
 

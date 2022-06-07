@@ -1,5 +1,6 @@
 async function donationFormHandler(event) {
     event.preventDefault();
+    console.log('hello');
     
     const amount = document.querySelector('#donation-amount').value.trim();
     const id = window.location.toString().split('/')[
@@ -50,4 +51,4 @@ let amountArr;
           return donation_total;
       };
 }
-  document.querySelector('.donate-form-group').addEventListener('submit', donationFormHandler);
+  document.querySelector('.donate-button').addEventListener('click', donationFormHandler);
