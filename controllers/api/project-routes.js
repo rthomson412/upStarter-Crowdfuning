@@ -102,7 +102,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Project.update({
+    Project.edit({
         title: req.body.title,
         description: req.body.description,
         fund_needed: req.session.fund_needed,
