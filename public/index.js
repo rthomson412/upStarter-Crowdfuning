@@ -1,6 +1,6 @@
-const User = require('./User');
-const Project = require('./Project');
-const Donation = require('./Donation');
+const User = require('../models/User');
+const Project = require('../models/Project');
+const Donation = require('../models/Donation');
 
 User.hasMany(Project, {
   foreignKey: 'user_id'
