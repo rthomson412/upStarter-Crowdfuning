@@ -11,7 +11,7 @@
       <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
     </p>
      <div 
-      class="ldBar label-center progress-bar" 
+      class="ldBar label-center progress-bar has-success" 
       data-value={{progress_bar project.donation_total project.fund_needed}} data-preset="circle">
     </div>
     <p>Created by {{project.user.name}} on {{format_date project.created_at}}</p>
