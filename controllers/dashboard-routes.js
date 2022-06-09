@@ -138,7 +138,7 @@ router.get('/edituser', withAuth, (req, res) => {
       ]
     })
       .then(dbProjectData => {
-        const posts = dbProjectData.map(post => post.get({ plain: true }));
+        const projects = dbProjectData.map(post => post.get({ plain: true }));
         res.render('createproject', { posts, loggedIn: true });
       })
       .catch(err => {

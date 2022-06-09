@@ -8,7 +8,7 @@
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: 'Gentium Plus', 'Raleway', 'Texturina';
+    /* font-family: 'Gentium Plus', 'Raleway', 'Texturina'; */
     color: #333;
   }
   
@@ -87,10 +87,6 @@
     padding: 0 1%;
   }
   
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
   
   .btn-no-style {
     background: none;
@@ -175,4 +171,11 @@
       flex-direction: column;
   }
 
-  .ldBar {stroke: lightseagreen};
+  .ldBar-label {
+    color: rgb(1, 77, 128);
+    font-family: 'varela round';
+    font-size: 1.5em;
+    font-weight: 100;
+    justify-content:center;
+    width: 80%;
+  }

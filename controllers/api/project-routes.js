@@ -84,9 +84,7 @@ router.get('/', (req, res) => {
       });
   });
 
-router.post('/', withAuth, (req, res) => {
-  console.log("/api/projects POST");
-  console.log(req.body);
+router.post('/', withAuth, async (req, res) => {
     Project.create({
       title: req.body.title,
       description: req.body.description,

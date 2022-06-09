@@ -1,25 +1,39 @@
-<div class="columns">
-  <h3>Open Projects</h3>
-</div>
-{{#each projects as |project| }}
-<div class="columns project">
-  <div class="column">
-    <h2>
-      <a href="/projects/{{project.id}}">{{project.title}}</a>
-    </h2>
-    <p>
-      <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
-    </p>
-     <div 
-      class="ldBar label-center progress-bar has-success" 
-      data-value={{progress_bar project.donation_total project.fund_needed}} data-preset="circle">
+<section class="projects notification is-warning" 
+style="display:flex; text-align: center; img:
+  {{!-- padding: 10%; border: 10%; margin: 10%; --}}
+  font-size: 110%;">
+
+  {{#each projects as |project| }}
+  <div class="column is-one-fifth">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+
+          <a href="/projects/{{project.id}}">{{project.title}}</a>
+        </p>
+        <div class="card-header-icon">
+          <span class="icon">
+            <i class="fas fa-check is-link"></i>
+          </span>
+        </div>
+      </header>
+      <p>
+        <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
+      </p>
+      <div class="card-image is-center is-400x400" >
+        <figure class="image">
+          <div class="ldBar label-center progress-bar" data-value={{progress_bar project.donation_total
+            project.fund_needed}} data-preset="circle">
+          </div>
+        </figure>
+      </div>
+      <div class="card-content">
+        {{project.description}}
+        <br />
+        <p>Created by {{project.user.name}} on {{format_date project.created_at}}</p>
+
+      </div>
     </div>
-    <p>Created by {{project.user.name}} on {{format_date project.created_at}}</p>
   </div>
-  <div class="column">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
+  {{/each}}
+</section>
