@@ -1,5 +1,5 @@
-async function signinFormHandler(event) {
-  event.preventDefault();
+async function signinFormHandler(e) {
+  e.preventDefault()
 
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
@@ -12,11 +12,11 @@ async function signinFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/projects');
       } else {
         alert(response.statusText);
       }
     }
 };
-
-document.querySelector('.login-form').addEventListener('submit', signinFormHandler);
+console.log(document.querySelector('.login-form'))
+document.querySelector('#login-form').addEventListener('submit', signinFormHandler);

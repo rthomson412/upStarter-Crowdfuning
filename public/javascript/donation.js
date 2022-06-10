@@ -2,7 +2,7 @@ async function donationFormHandler(event) {
     event.preventDefault();
     console.log('hello');
     
-    const amount = document.querySelector('#donation-amount').value.trim();
+    const amount = parseInt(document.querySelector('#donation-amount').value.trim());
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
