@@ -1,36 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="column has-text-centered">
+  <h1 class="title is-info"><a href="/dashboard">Your Projects</a></h1><br>
+</div>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{name}} Dashboard: upSTARTER</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+{{#if projects.length}}
 
-<body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="is-title is-info"><a href="/dashboard">Your Projects</a></h1>
-  </header>
 
-  <main class="col-auto">
-    {{#if projects.length}}
-    {{#each projects as |project|}}
-        {{> project project}}
-            <a href="/dashboard/edit/{{project.id}}"><button class="edit-button">Edit project</button></a>
-        </div>
-    {{/each}}
+{{#each projects as |project|}}
+<span>
+  <a href="/projects/{{id}}">{{title}}</a>
+</span>
+<span>Raised ${{donation_total}} / ${{fund_needed}}</span>
+<a href="/dashboard/edit/{{project.id}}"><button class="edit-button">Edit project</button></a>
+
+{{/each}}
 
 {{else}}
 <h4>You currently do not have any projects</h4>
 
 {{/if}}
-  </main>
+</body>
 
-  <footer class="footer flex-row justify-center">
-    <a href="/projects/create">New project</a>
-  </footer>
+<footer class="footer">
+  <a href="/projects/create">New project</a>
+</footer>
 </body>
 
 <script src="javascript/logout.js"></script>
+
 </html>

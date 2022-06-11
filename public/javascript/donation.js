@@ -23,7 +23,7 @@ async function donationFormHandler(event) {
 
     if (response.ok) {
       console.log(response);
-      document.location.replace('/dashboard');
+      document.location.replace('/projects');
       getAmountArr();
       donation_total();
     } else {

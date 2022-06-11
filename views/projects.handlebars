@@ -1,10 +1,17 @@
-<section class="projects notification is-warning" 
-style="display:flex; text-align: center; img:
-  {{!-- padding: 10%; border: 10%; margin: 10%; --}}
-  font-size: 110%;">
 
-  {{#each projects as |project| }}
-  <div class="column is-one-fifth">
+  <div class="container notification is-warning">
+    <div class="section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title is-info">Currently Resourcing upStarters:</h1><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    {{#each projects as |project| }}
+
+  <div class="column is-6">
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">
@@ -20,12 +27,10 @@ style="display:flex; text-align: center; img:
       <p>
         <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
       </p>
-      <div class="card-image is-center is-400x400" >
-        <figure class="image">
-          <div class="ldBar label-center progress-bar" data-value={{progress_bar project.donation_total
-            project.fund_needed}} data-preset="circle">
-          </div>
-        </figure>
+      <div class="card-image is-center is-400x400">
+        <div class="ldBar label-center progress-bar" data-value={{progress_bar project.donation_total
+          project.fund_needed}} data-preset="circle">
+        </div>
       </div>
       <div class="card-content">
         {{project.description}}
@@ -35,5 +40,7 @@ style="display:flex; text-align: center; img:
       </div>
     </div>
   </div>
-  {{/each}}
-</section>
+  </div>
+
+
+{{/each}}
