@@ -1,8 +1,8 @@
 
-  <div class="container notification is-warning">
+  <div class="container notification is-info">
     <div class="section">
       <div class="columns">
-        <div class="column has-text-centered">
+        <div class="column has-text-centered ">
           <h1 class="title is-info">Currently Resourcing upStarters:</h1><br>
         </div>
       </div>
@@ -11,9 +11,9 @@
   <div class="columns">
     {{#each projects as |project| }}
 
-  <div class="column is-6">
+  <div class="column is-center">
     <div class="card">
-      <header class="card-header">
+      <header class="card-header notification is-warning">
         <p class="card-header-title">
 
           <a href="/projects/{{project.id}}">{{project.title}}</a>
