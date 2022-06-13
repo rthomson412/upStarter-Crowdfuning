@@ -34,5 +34,3 @@ https://shrouded-reaches-36015.herokuapp.com/
 ## Walkthrough Video
 
 https://drive.google.com/file/d/17qVSifOJQsiD34iodcMjjgozwVycKAve/view
-
-![Alt text](/Project 2 upSTARTER screenshot.png "upSTARTER Homepage")
