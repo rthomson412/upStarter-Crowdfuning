@@ -4,6 +4,7 @@ const Donation = require('../models/Donation');
 
 User.hasMany(Project, {
   foreignKey: 'user_id'
+  onDelete: 'cascade',
 });
 Project.belongsTo(User, {
   foreignKey: 'user_id'
