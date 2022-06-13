@@ -3,7 +3,7 @@ const Project = require('../models/Project');
 const Donation = require('../models/Donation');
 
 User.hasMany(Project, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
   onDelete: 'cascade',
 });
 Project.belongsTo(User, {
@@ -17,11 +17,11 @@ Donation.belongsTo(Project, {
 });
 User.hasMany(Donation, {
   foreignKey: 'user_id',
-  onDelete: 'cascade',
+  onDelete: 'cascade'
 });
 Project.hasMany(Donation, {
   foreignKey: 'project_id',
-  onDelete: 'cascade',
+  onDelete: 'cascade'
 })
 
 module.exports = { User, Project, Donation };
