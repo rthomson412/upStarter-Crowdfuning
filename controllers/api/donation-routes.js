@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
 
 // Create a donation route
 router.post("/", withAuth, async (req, res) => {
+  console.log(req.session)
   if (req.session) {
     Donation.create({
       amount: req.body.amount,

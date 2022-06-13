@@ -1,11 +1,13 @@
-<section class="project">
+<section class="column is-6 project">
   <div class="title">
     <span>
       <a href="/projects/{{id}}">{{title}}</a>
     </span>
-    <span style="float:right">Posted by {{user.name}} on
-      {{format_date
-      created_at}}</span>
+       <figure class="image">
+          <div class="ldBar label-center progress-bar" data-value={{progress_bar project.donation_total
+            project.fund_needed}} data-preset="circle">
+          </div>
+        </figure>
   </div>
   <div class="text">
     <p>{{description}}</p>
@@ -14,15 +16,16 @@
   <h3>Financial target for project:</h3>
   <span>Raised ${{donation_total}} / ${{fund_needed}}</span>
   </p>
-  <div class="ldBar label-center progress-bar" data-value={{progress_bar donation_total fund_needed}} data-preset="circle">
-    </div>
     <label for="donation">Make a financial contribution:</label>
-  <div class="box">
+  <div class="donation box">
     <input class="input form-input" type="number" id="donation-amount" name="donation-amount" placeholder="What goes around comes around. Give generously." />
-    <button class="button is-primary donate-button">Contribute</button>
+    <button class="button is-info donate-button">Contribute</button>
   </div>
   </div>
   </div>
 </section>
+    <span style="float:right">Founder {{user.name}} created this upSTARTER on
+      {{format_date
+      created_at}}</span>
 
 <script src="/javascript/donation.js"></script>

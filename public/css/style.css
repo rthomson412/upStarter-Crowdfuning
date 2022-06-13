@@ -1,114 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
-* {
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Gentium Plus', 'Raleway', 'Texturina';
-    color: #333;
-  }
-  
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-  }
-  
-  a:hover {
-    color: #c55900;
-  }
-  
-  button {
-    border: 0;
-    padding: 1%;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .navbar-item {
-    margin: 0 20px;
-  }
-  
-  .post-list {
-    margin: 0;
-    padding: 0;
-  }
-  
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid rgb(204, 204, 204);
-  }
-  
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid #bd7a29;
-  }
-  
-  textarea {
-    min-width: 50%;
-    min-height: 200px;
-  }
-  
-  input.post-title {
-    min-width: 50%;
-    min-height: 20px;
-  }
-  
-  form > div {
-    margin-bottom: 2%;
-  }
-  
-  form label {
-    display: block;
-  }
-  
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header {
-    border-bottom: 1px solid rgb(255, 237, 222);
-    display: flex;
-    font-size: larger;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
-  
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #bd7a29;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 20px;
-  }
-  
-  .btn-no-style:hover {
-    background: none;
-    color: #a25c00;
-  }
+
   
   .save-post-btn {
     background-color: #a3ff8e;
@@ -175,4 +67,11 @@
       flex-direction: column;
   }
 
-  .ldBar {stroke: lightseagreen};
+  .ldBar-label {
+    color: rgb(1, 77, 128);
+    font-family: 'varela round';
+    font-size: 1.5em;
+    font-weight: 100;
+    justify-content:center;
+    width: 80%;
+  }

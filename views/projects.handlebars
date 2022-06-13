@@ -1,25 +1,46 @@
-<div class="columns">
-  <h3>Open Projects</h3>
-</div>
-{{#each projects as |project| }}
-<div class="columns project">
-  <div class="column">
-    <h2>
-      <a href="/projects/{{project.id}}">{{project.title}}</a>
-    </h2>
-    <p>
-      <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
-    </p>
-     <div 
-      class="ldBar label-center progress-bar has-success" 
-      data-value={{progress_bar project.donation_total project.fund_needed}} data-preset="circle">
+
+  <div class="container notification is-info">
+    <div class="section">
+      <div class="columns">
+        <div class="column has-text-centered ">
+          <h1 class="title is-info">Currently Resourcing upStarters:</h1><br>
+        </div>
+      </div>
     </div>
-    <p>Created by {{project.user.name}} on {{format_date project.created_at}}</p>
   </div>
-  <div class="column">
-    <p>
-      {{project.description}}
-    </p>
+  <div class="columns">
+    {{#each projects as |project| }}
+
+  <div class="column is-center">
+    <div class="card">
+      <header class="card-header notification is-warning">
+        <p class="card-header-title">
+
+          <a href="/projects/{{project.id}}">{{project.title}}</a>
+        </p>
+        <div class="card-header-icon">
+          <span class="icon">
+            <i class="fas fa-check is-link"></i>
+          </span>
+        </div>
+      </header>
+      <p>
+        <span>Raised ${{project.donation_total}} / ${{project.fund_needed}}</span>
+      </p>
+      <div class="card-image is-center is-400x400">
+        <div class="ldBar label-center progress-bar" data-value={{progress_bar project.donation_total
+          project.fund_needed}} data-preset="circle">
+        </div>
+      </div>
+      <div class="card-content">
+        {{project.description}}
+        <br />
+        <p>Created by {{project.user.name}} on {{format_date project.created_at}}</p>
+
+      </div>
+    </div>
   </div>
-</div>
+  </div>
+
+
 {{/each}}

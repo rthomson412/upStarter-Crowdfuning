@@ -2,7 +2,7 @@ async function donationFormHandler(event) {
     event.preventDefault();
     console.log('hello');
     
-    const amount = document.querySelector('#donation-amount').value.trim();
+    const amount = parseInt(document.querySelector('#donation-amount').value.trim());
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -23,7 +23,7 @@ async function donationFormHandler(event) {
 
     if (response.ok) {
       console.log(response);
-      document.location.replace('/dashboard');
+      document.location.replace('/projects');
       getAmountArr();
       donation_total();
     } else {

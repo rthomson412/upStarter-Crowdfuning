@@ -1,22 +1,56 @@
-<div class="row justify-space-between-md">
-  <div class="login-form">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="email-login" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="password-login" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
+
+     
+     <link rel="stylesheet" href="/css/signstyle.css" />
+<style>
+  
+      article {
+        margin: 0;
+        background: url(https://cdn.shopify.com/s/files/1/0561/2329/3877/products/il_fullxfull.3385263072_d5cc.jpg?v=1633876099)
+          no-repeat center;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+      }
+    </style>
+    
+    <article>
+    <div class="sign">
+      <h1>upSTARTER Login</h1>
+      <form id="login-form">
+        <div type="text" class="input-group">
+          <div>
+            <i class="fas fa-user"></i>
+          </div>
+          <input
+            placeholder="Your email address."
+            input
+            class="email-login"
+            type="text"
+            id="email-login"
+          />
+        </div>
+
+        <div class="input-group">
+          <div>
+            <i class="fas fa-key"></i>
+          </div>
+          <input
+            class="password-login"
+            type="password"
+            id="password-login"
+            placeholder="Password."
+          />
+        </div>
+
+
         <button class="button btn-primary" type="submit">Login</button>
-      </div>
-    </form>
-    <a href="/signup">New user? Sign Up.</a>
-  </div>
-</div>
+        <p><a href="/signup">New user? Join in.</a></p>
+      </form>
+    </div>
+  </article>
 
 <script src="/javascript/login.js"></script>
 

@@ -84,9 +84,7 @@ router.get('/', (req, res) => {
       });
   });
 
-router.post('/', withAuth, (req, res) => {
-  console.log("/api/projects POST");
-  console.log(req.body);
+router.post('/', withAuth, async (req, res) => {
     Project.create({
       title: req.body.title,
       description: req.body.description,
@@ -102,7 +100,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Project.edit({
+    Project.update({
         title: req.body.title,
         description: req.body.description,
         fund_needed: req.session.fund_needed,

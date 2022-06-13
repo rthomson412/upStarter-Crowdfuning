@@ -8,20 +8,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Raleway:wght@200&family=Syne+Mono&family=Texturina:opsz,wght@12..72,100&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+ 
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
   <link rel="stylesheet" type="text/css" href="css/loading-bar.min.css" />
   <script type="text/javascript" src="javascript/loading-bar.min.js"></script>
+   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 
-<body>
+
   <header>
-    <div class="navbar" arial-label="main navigation">
+    <div class="navbar">
+      {{!-- arial-label="main navigation" --}}
       <div class="navbar-start">
         <div class="navbar-item">
-          <a class="button is-success" href="/">
+          <a class="button is-info" href="/">
             <strong>upSTARTER</strong>
           </a>
           <a class="button is-light projects" href="/projects">Projects</a>
@@ -31,28 +33,23 @@
         <nav class="navbar-item">
           {{#if logged_in}}
           <div class="buttons">
-            <a class="button is-success" href="/dashboard">
+            <a class="button is-info" href="/dashboard">
               <strong>Dashboard</strong>
             </a>
             <a class="button is-light" id="logout">Logout</a>
           </div>
           {{else}}
-          <a class="button is-success" href="/login"><strong>Login</strong></a>
+          <a class="button is-info" href="/login"><strong>Login</strong></a>
           {{/if}}
         </nav>
       </div>
     </div>
   </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
 
-  </footer>
-
+  <body>{{{ body }}}</body>
+    
   {{#if logged_in}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
-</body>
 
 </html>

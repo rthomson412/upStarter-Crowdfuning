@@ -5,10 +5,10 @@
   </h2>
   <form class="edit-project-form">
     <div>
-      <input name="project-title" type="text" value="{{project.title}}" />
+      <input name="project-title" id="project-title" type="text" value="{{project.title}}" />
     </div>
     <div>
-      <textarea name="project-desc">{{project.description}}</textarea>
+      <textarea name="project-desc" id="project-desc">{{project.description}}</textarea>
     </div>
     <div>
       Posted on {{format_date project.created_at}}

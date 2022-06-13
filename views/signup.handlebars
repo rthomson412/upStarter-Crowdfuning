@@ -1,24 +1,45 @@
-<div class="row justify-space-between-md">
-  <div class="signup-card">
-    <h2 class="page-title">Sign Up</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">Name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+<link rel="stylesheet" href="/css/signstyle.css" />
+<style>
+  article {
+    margin: 0;
+    background: url(https://cdn.shopify.com/s/files/1/0561/2329/3877/products/il_fullxfull.3385263072_d5cc.jpg?v=1633876099) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+</style>
+
+<article>
+  <div class="sign">
+    <h1>SignUp with upStarter</h1>
+    <form class="signup-form">
+      <div type="text" class="input-group">
+        <div>
+          <i class="fas fa-user"></i>
+        </div>
+        <input class="form-input" type="text" id="name-signup" placeholder="Your name." />
       </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+      <div type="email" class="input-group">
+        <div>
+          <i class="fas fa-envelope"></i>
+        </div>
+        <input class="form-input" type="text" id="email-signup" placeholder="Your email." />
       </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+      <div class="input-group">
+        <div>
+          <i class="fas fa-key"></i>
+        </div>
+        <input class="form-input" type="password" id="password-signup" placeholder="Password." />
       </div>
-      <div class="form-group">
-        <button class="btn button btn-primary" type="submit">Sign Up</button>
-      </div>
+
+      <button class="btn button btn-primary" type="submit">Sign Up</button>
+      <p>Already a member? <a href="/login">Sign In!</a></p>
     </form>
   </div>
-</div>
+</article>
+
 
 <script src="javascript/signup.js"></script>
