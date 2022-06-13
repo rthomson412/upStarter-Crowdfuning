@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Project, Donation } = require('../../models');
 const withAuth = require('../../utils/auth');
+const Sequelize = require('sequelize')
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -60,7 +61,13 @@ router.post('/', async (req, res) => {
     });
 
   } catch (err) {
-    res.status(400).json(err);
+    if(err instanceof Sequelize.ValidationError)
+    {
+      res.status(400).json(err);
+      return;
+    }
+    console.error(err);
+    res.status(500).json(err);
   }
 });
 
