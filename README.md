@@ -14,10 +14,6 @@ AS a potential investor in tech start-up projects
 I WANT a forum where I can peruse people's ideas for new projects
 SO THAT I can invest and give guidance for projection development
 
-## Heroku Deployed Link:
-
-https://shrouded-reaches-36015.herokuapp.com/
-
 
 # Built With:
 -Javascript
